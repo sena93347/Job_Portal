@@ -12,7 +12,7 @@
 			<li class="nav-item active"><a class="nav-link" href="#">Home
 					<span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-plus-circle"></i>Post Job</a></li>
+			<li class="nav-item"><a class="nav-link" href="add_job.jsp"><i class="fa fa-plus-circle"></i>Post Job</a></li>
 			<li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-eye"></i>View Job</a></li>
 
 
@@ -21,7 +21,7 @@
 		  <a href="Login.jsp" class="btn btn-light mr-1"><i class="fa-solid fa-right-to-bracket"></i>Login
 		  </a>
 		  
-		  <a href="#" class="btn btn-light"><i class="fa-solid fa-user-large"></i>SignUp
+		  <a href="signup.jsp" class="btn btn-light"><i class="fa-solid fa-user-large"></i>SignUp
 		  </a>
 		  
 		</form>
