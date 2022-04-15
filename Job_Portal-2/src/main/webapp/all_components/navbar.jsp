@@ -13,7 +13,7 @@
 					<span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="add_job.jsp"><i class="fa fa-plus-circle"></i>Post Job</a></li>
-			<li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-eye"></i>View Job</a></li>
+			<li class="nav-item"><a class="nav-link" href="view_jobs.jsp"><i class="fas fa-eye"></i>View Job</a></li>
 
 
 		</ul>
