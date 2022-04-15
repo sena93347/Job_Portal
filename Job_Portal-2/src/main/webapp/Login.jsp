@@ -25,16 +25,16 @@
 							<c:remove var="succMsg" />
 						</c:if>
 
-						<form action="login" method="post">
+						<form action="Login" method="post">
 							<div class="form-group">
 								<label> Enter Email</label> <input type="email"
 									required="required" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp" name="em">
+									id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Enter Password</label><input
 									required="required" type="password" class="form-control"
-									id="exampleInputPassword1">
+									id="exampleInputPassword1" name="password">
 							</div>
 							<button type="submit"
 							     class="btn btn-primary badge-pill btn-block">Login</button>
