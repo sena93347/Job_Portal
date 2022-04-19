@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -20,20 +22,20 @@
 							<h5>Registration</h5>
 						</div>
 						<c:if test="${not empty succMsg }">
-							<h4 class="text-center text-danger">${succMsg }</h4>
+							<h4 class="text-center text-success">${succMsg }</h4>
 							<c:remove var="succMsg" />
 						</c:if>
 
-						<form action="register" method="post">
+						<form action="add_user" method="post">
 							<div class="form-group">
 								<label> Enter Full Name</label> <input type="email"
 									required="required" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp" name="em">
+									id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
 							</div>
 							<div class="form-group">
 								<label> Enter Qualification</label> <input type="email"
 									required="required" class="form-control"
-									id="exampleInputEmail1" aria-describedby="emailHelp" name="em">
+									id="exampleInputEmail1" aria-describedby="emailHelp" name="qua">
 							</div>
 							<div class="form-group">
 								<label> Enter Email</label> <input type="email"

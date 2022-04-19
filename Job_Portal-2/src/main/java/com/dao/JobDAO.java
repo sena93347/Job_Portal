@@ -38,7 +38,7 @@ public class JobDAO {
 			}
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 		return f;
@@ -49,7 +49,7 @@ public class JobDAO {
 		Jobs j =null;
 		
 		try {
-			String sql="select * from jobs order by id desc";
+			String sql="select * from jobs order by id DESC";
 			PreparedStatement ps=conn.prepareStatement(sql);
 			ResultSet rs=ps.executeQuery();
 			
@@ -66,11 +66,13 @@ public class JobDAO {
 			}
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 		return list;
 	}
+	
+	
 	
 	public Jobs getJobById(int id){
 		
@@ -150,4 +152,98 @@ public class JobDAO {
 		
 		return f;
 	}
+	
+	public List<Jobs> getJobsForUser(){
+		List<Jobs> list =new ArrayList<Jobs>();
+		Jobs j =null;
+		
+		try {
+			String sql="select * from jobs where status=? order by id DESC";
+			PreparedStatement ps=conn.prepareStatement(sql);
+			ps.setString(1, "Active");
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				j=new Jobs();
+				j.setId(rs.getInt(1));
+				j.setTitle(rs.getString(2));
+				j.setDescription(rs.getString(3));
+				j.setCategory(rs.getString(4));
+				j.setStatus(rs.getString(5));
+				j.setLocation(rs.getString(6));
+				j.setPdate(rs.getTimestamp(7)+"");
+				list.add(j);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public List<Jobs> getJobLocAndCat(String category,String location){
+		List<Jobs> list =new ArrayList<Jobs>();
+		Jobs j =null;
+		
+		try {
+			String sql="select * from jobs where category=? and location=? order by id DESC";
+			PreparedStatement ps=conn.prepareStatement(sql);
+			ps.setString(1, category);
+			ps.setString(2,location);
+			
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				j=new Jobs();
+				j.setId(rs.getInt(1));
+				j.setTitle(rs.getString(2));
+				j.setDescription(rs.getString(3));
+				j.setCategory(rs.getString(4));
+				j.setStatus(rs.getString(5));
+				j.setLocation(rs.getString(6));
+				j.setPdate(rs.getTimestamp(7)+"");
+				list.add(j);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public List<Jobs> getJobLocOrCat(String category,String location){
+		List<Jobs> list =new ArrayList<Jobs>();
+		Jobs j =null;
+		
+		try {
+			String sql="select * from jobs where category=? or location=? order by id DESC";
+			PreparedStatement ps=conn.prepareStatement(sql);
+			ps.setString(1, category);
+			ps.setString(2,location);
+			
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				j=new Jobs();
+				j.setId(rs.getInt(1));
+				j.setTitle(rs.getString(2));
+				j.setDescription(rs.getString(3));
+				j.setCategory(rs.getString(4));
+				j.setStatus(rs.getString(5));
+				j.setLocation(rs.getString(6));
+				j.setPdate(rs.getTimestamp(7)+"");
+				list.add(j);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	
+	
 }
